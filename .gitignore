@@ -1,1 +1,3 @@
 node_modules/
+.chainlink-local/log.jsonl
+.chainlink-local/secret
