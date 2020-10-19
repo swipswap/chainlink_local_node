@@ -1,0 +1,18 @@
+{
+  "name": "chainlink_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "halt": "docker-compose down",
+    "start": "docker-compose up -d && node index.js"
+  },
+  "keywords": [],
+  "author": "eltneg <yorewole@gmail.com> (https://eltneg.prjct.dev/)",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "0.20.0",
+    "ethers": "5.0.17"
+  }
+}
