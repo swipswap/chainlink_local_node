@@ -8,11 +8,12 @@ services:
         container_name: chainlink_local
         volumes:
             - "${PWD}/.chainlink-local:/chainlink"
-        deploy:
-            restart_policy:
-                condition: on-failure
-                delay: 5s
-                max_attempts: 3
+        restart: on-failure:5
+        # deploy:
+        #     restart_policy:
+        #         condition: on-failure
+        #         delay: 5s
+        #         max_attempts: 3
                 # window: 10s
         command:  "local n -p /chainlink/.password -a /chainlink/.api"
         networks:
@@ -24,7 +25,7 @@ services:
         ports:
             - "6689:5432"
         environment:
-            POSTGRES_DB: mydb
+            POSTGRES_DB: postgres
             POSTGRES_USER: user
             POSTGRES_PASSWORD: secret
         volumes:
