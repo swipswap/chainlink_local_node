@@ -85,7 +85,7 @@ const getNodeAddress = async (delay=5) =>{
 
 const main = async (callbackFunction=()=>{}) => {
     let _store = {}
-    await sleep(5)
+    await sleep(10)
     const provider = await connectAndGetProvider()
     const knownSigner = await getKnownSigner(provider)
     const fundAddress = getAddressFunder(provider)
