@@ -9,7 +9,7 @@ services:
         volumes:
             - "${PWD}/.chainlink-local:/chainlink"
         restart: on-failure:5
-        command:  "local n -p /chainlink/.password -a /chainlink/.api"
+        entrypoint: sh -c "chainlink local import /chainlink/keystore.json && chainlink local n -p /chainlink/.password -a /chainlink/.api"
         networks:
             - app-network
 
