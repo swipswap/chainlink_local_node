@@ -8,13 +8,8 @@ services:
         container_name: chainlink_local
         volumes:
             - "${PWD}/.chainlink-local:/chainlink"
-        deploy:
-            restart_policy:
-                condition: on-failure
-                delay: 5s
-                max_attempts: 3
-                # window: 10s
-        command:  "local n -p /chainlink/.password -a /chainlink/.api"
+        restart: on-failure:5
+        entrypoint: sh -c "chainlink local import /chainlink/keystore.json && chainlink local n -p /chainlink/.password -a /chainlink/.api"
         networks:
             - app-network
 
