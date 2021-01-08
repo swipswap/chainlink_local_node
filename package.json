@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "gen:ssl": "cd ca && node genSSL.js",
     "stop": "docker-compose down",
     "deploy": "node index.js",
     "start": "docker-compose up -d && npm run deploy"
